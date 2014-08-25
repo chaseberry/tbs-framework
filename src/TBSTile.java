@@ -20,8 +20,8 @@ public abstract class TBSTile {
 
     public abstract void onSelect();//will have params once those classes are defineds
 
-    public abstract void onDeselect();
+    public void onDeselect(){};
 
-    
+
 
 }
