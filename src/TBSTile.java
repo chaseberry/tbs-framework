@@ -18,10 +18,18 @@ public abstract class TBSTile {
         return defaultImage;
     }
 
-    public abstract void onSelect();//will have params once those classes are defineds
+    public abstract void onSelect(TBSPlayer selector);
 
-    public void onDeselect(){};
+    public abstract boolean canUnitMove(TBSUnit unit);
 
+    public abstract boolean canBuild(TBSBuilding building);
 
+    public abstract void turnStarts(TBSPlayer player);
+
+    public void onDeselect(TBSPlayer selector){}
+
+    public void unitEnters(TBSUnit unit){}
+
+    public void unitExits(TBSUnit unit){}
 
 }
