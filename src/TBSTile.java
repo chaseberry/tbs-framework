@@ -18,10 +18,31 @@ public abstract class TBSTile {
         return defaultImage;
     }
 
-    public abstract void onSelect();//will have params once those classes are defineds
+    public void onSelect(TBSPlayer selector, TBSMap map){
+        TBSBuilding building = map.buildingOnTile(this);
+        TBSUnit unit = map.unitOnTile(this);
+        if(unit != null){
+            unit.onSelect(selector);
+        }
+        if(building != null){
+            building.onSelect(selector);
+        }
+    }
 
-    public void onDeselect(){};
+    public abstract boolean canUnitMove(TBSUnit unit);
 
+    public abstract boolean canBuild(TBSBuilding building);
 
+    public abstract void turnStarts(TBSPlayer player);
+
+    public void onDeselect(TBSPlayer selector){}
+
+    public void unitEnters(TBSUnit unit){}
+
+    public void unitExits(TBSUnit unit){}
+
+    public double distanceToTile(TBSTile tile){
+        return 0;
+    }
 
 }
