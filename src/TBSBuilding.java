@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 /**
  * Created by Chase on 8/27/2014.
  */
-public class TBSBuilding {
+public abstract class TBSBuilding {
 
     private TBSPlayer owner;
     private BufferedImage defaultImage;
@@ -14,5 +14,7 @@ public class TBSBuilding {
     public static TBSBuilding create(){
         return null;
     }
+
+    public abstract void onSelect(TBSPlayer selector);
 
 }

@@ -18,7 +18,16 @@ public abstract class TBSTile {
         return defaultImage;
     }
 
-    public abstract void onSelect(TBSPlayer selector);
+    public void onSelect(TBSPlayer selector, TBSMap map){
+        TBSBuilding building = map.buildingOnTile(this);
+        TBSUnit unit = map.unitOnTile(this);
+        if(unit != null){
+            unit.onSelect(selector);
+        }
+        if(building != null){
+            building.onSelect(selector);
+        }
+    }
 
     public abstract boolean canUnitMove(TBSUnit unit);
 
@@ -31,5 +40,9 @@ public abstract class TBSTile {
     public void unitEnters(TBSUnit unit){}
 
     public void unitExits(TBSUnit unit){}
+
+    public double distanceToTile(TBSTile tile){
+        return 0;
+    }
 
 }

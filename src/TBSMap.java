@@ -6,12 +6,18 @@ import java.nio.Buffer;
  */
 public class TBSMap {
 
-    private TBSTile[] mapTiles;
+    private TBSTile[]/*[]*/ mapTiles;
 
     public BufferedImage getImage(int startX, int startY, int endX, int endY){
         return null;
     }
 
+    public TBSUnit unitOnTile(TBSTile tile){
+        return null;
+    }
 
+    public TBSBuilding buildingOnTile(TBSTile tile){
+        return null;
+    }
 
 }
