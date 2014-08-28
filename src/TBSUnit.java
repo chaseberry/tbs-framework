@@ -8,6 +8,6 @@ public abstract class TBSUnit {
     //TBSPlayer owner;s
     BufferedImage defaultImage;
 
-    
+
 
 }
